@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>Homepage | Atom Template</title>
+
+  <meta property="og:title" content="Homepage | Atom Template" />
+
+  <meta property="og:locale" content="en_US" />
+
+  <link rel="canonical" href="//" />
+
+  <meta property="og:url" content="//" />
+
+  <meta name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Atom Template" />
+
+  <meta property="og:image" content="//assets/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect" />
+
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+
+  <link crossorigin="anonymous" href="/assets/styles/main.min.css" media="screen" rel="stylesheet" />
+
+  <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+</head>
+
+
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+
+  <div id="main" class="relative">
+    <div x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}">
+      <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
+  ">
+        <div class="container flex items-center justify-between">
+          <div>
+            <a href="/">
+              <img src="/assets/img/logo.svg" class="w-24 lg:w-48" alt="logo image" />
+            </a>
+          </div>
+          <div class="hidden lg:block">
+            <ul class="flex items-center">
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#about')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#services')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#portfolio')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+            
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#blog')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+              <li class="group pl-6">
+
+                <span @click="triggerNavItem('#contact')"
+                  class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </li>
+
+            </ul>
+          </div>
+          <div class="block lg:hidden">
+            <button @click="mobileMenu = true">
+              <i class="bx bx-menu text-4xl text-white"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
+          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
+            <img src="/assets/img/icon-close.svg" class="h-10 w-auto" alt="" />
+          </button>
+
+          <ul class="mt-8 flex flex-col">
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#about')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#services')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#portfolio')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#clients')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Clients</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#work')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Work</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#statistics')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Statistics</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#blog')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Blog</span>
+
+            </li>
+
+            <li class="py-2">
+
+              <span @click="triggerMobileNavItem('#contact')"
+                class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div>
+        <div class="relative bg-cover bg-center bg-no-repeat py-8"
+          style="background-image: url(/assets/img/bg-hero.jpg)">
+          <div
+            class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
+          </div>
+
+          <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
+            <div class="flex flex-col items-center justify-center lg:flex-row">
+              <div class="rounded-full border-8 border-primary shadow-xl">
+                <img src="/assets/img/blog-author.jpg" class="h-48 rounded-full sm:h-56" alt="author" />
+              </div>
+              <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+                <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
+                  Hello I'm Satyam Gupta!
+                </h1>
+                <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+                  <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+                    <p class="font-body text-lg uppercase text-white">Let's connect</p>
+                    <div class="hidden sm:block">
+                      <i class="bx bx-chevron-right text-3xl text-yellow"></i>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    
+                    <a href="https://github.com/satyy2301" class="pl-4">
+                      <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+                  </a>
+                  
+                   
+                    <a href="https://www.linkedin.com/in/satyam-gupta-883729234/" class="pl-4">
+                      <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+                    </a>
+                    <a href="mailto:satyamg065@gmail.com" class="pl-4">
+                      <i class="bx bx-mail-send text-2xl text-white hover:text-yellow"></i>
+                  </a>
+                  
+                    <a href="https://leetcode.com/u/satyamg065/" class="pl-4" target="_blank" rel="noopener noreferrer">
+                      <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="24" height="24" fill="#FFFFFF">
+                          <path d="M20.1,16.007h-9.187c-1.047,0-1.899-0.897-1.899-2s0.853-2,1.899-2H20.1c1.048,0,1.9,0.897,1.9,2S21.147,16.007,20.1,16.007z M10.913,13.507c-0.217,0-0.399,0.229-0.399,0.5s0.183,0.5,0.399,0.5H20.1c0.217,0,0.4-0.229,0.4-0.5s-0.184-0.5-0.4-0.5H10.913z"></path>
+                          <path d="M10.538,24c-1.621,0-3.011-0.55-4.021-1.589l-3.949-4.09C1.557,17.278,1,15.803,1,14.167c0-1.61,0.557-3.072,1.568-4.117l9.174-9.47C12.104,0.206,12.592,0,13.113,0c0,0,0,0,0.001,0c0.54,0,1.049,0.218,1.434,0.614c0.766,0.792,0.78,2.061,0.032,2.828l-1.443,1.511C13.549,5.18,13.985,5.5,14.511,5.95l2.361,1.963c0.804,0.824,0.788,2.093,0.024,2.882c-0.386,0.397-0.895,0.615-1.435,0.615c-0.001,0-0.001,0-0.002,0c-0.521,0-1.007-0.207-1.367-0.581l-2.377-1.876c-0.668-0.497-0.783-0.534-1.19-0.534c-0.422,0-0.803,0.159-1.164,0.486l-3.886,4.069c-0.282,0.291-0.43,0.702-0.43,1.191c0,0.498,0.155,0.945,0.427,1.226l3.937,4.091c0.251,0.26,0.627,0.392,1.116,0.392c0.49,0,0.866-0.132,1.116-0.392l2.461-2.454c0.351-0.363,0.836-0.569,1.357-0.57c0,0,0.001,0,0.002,0c0.539,0,1.049,0.219,1.434,0.616c0.765,0.79,0.78,2.058,0.034,2.825l-2.365,2.469C13.542,23.422,12.113,24,10.538,24z M13.113,1.5c-0.079,0-0.194,0.021-0.294,0.124l-9.173,9.469C2.907,11.856,2.5,12.948,2.5,14.167c0,1.244,0.407,2.349,1.146,3.11c0.001,0.001,0.001,0.001,0.001,0.002l3.948,4.089c0.72,0.74,1.737,1.132,2.943,1.132c1.183,0,2.202-0.405,2.946-1.173l2.365-2.469c0.188-0.193,0.172-0.531-0.032-0.741c-0.1-0.103-0.226-0.159-0.356-0.159l0,0c-0.078,0-0.192,0.021-0.29,0.122l-2.46,2.454c-0.526,0.546-1.285,0.84-2.186,0.84c-0.898,0-1.658-0.294-2.195-0.85l-3.937-4.091c-0.546-0.565-0.848-1.371-0.848-2.268c0-0.874,0.302-1.667,0.849-2.231l3.921-4.104c0.67-0.609,1.421-0.912,2.21-0.912c0.878,0,1.315,0.258,2.104,0.845l2.468,1.957c0.172,0.168,0.285,0.189,0.364,0.189l0,0c0.131,0,0.258-0.057,0.357-0.159c0.202-0.21,0.219-0.549,0.034-0.739l-2.311-1.915c-1.026-0.881-1.474-1.02-1.844-1.086c-0.271-0.05-0.51-0.247-0.595-0.51c-0.086-0.263-0.036-0.554,0.155-0.753l2.241-2.347c0.189-0.195,0.173-0.533-0.03-0.743C13.372,1.557,13.245,1.5,13.113,1.5z"></path>
+                      </svg>
+                  </a>
+                    
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-grey-50" id="about">
+          <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+            <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+              <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+                Who am I?
+              </h2>
+              <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+                I'm Satyam Gupta, a Web Developer & Machine Learning Enthusiast
+              </h4>
+              <p class="pt-6 font-body leading-relaxed text-grey-20">
+                Welcome to my digital space! I'm Satyam Gupta, a relentless explorer at the intersection of technology
+                and creativity. As a Computer Science enthusiast graduating from Jaypee Institute of Information and
+                Technology, my journey has been fueled by a passion for innovation and a drive to make a meaningful
+                impact. From revolutionizing dining experiences with cutting-edge MERN-based platforms to delving deep
+                into the realms of machine learning and data science with manifold learning systems, my projects reflect
+                a commitment to pushing boundaries and redefining possibilities. With a diverse skill set spanning from
+                web development to film scripting, I bring a unique blend of technical expertise and creative flair to
+                the table. Eager to embark on new challenges, I thrive in collaborative environments where my analytical
+                thinking, problem-solving skills, and unwavering dedication can shine. Join me on this exhilarating
+                journey as we turn ideas into reality and pave the way for a future where innovation knows no bounds.
+              </p>
+              <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
+                <div class="flex items-center justify-center sm:justify-start">
+                  <p class="font-body text-lg font-semibold uppercase text-grey-20">
+                    Connect with me
+                  </p>
+                  <div class="hidden sm:block">
+                    <i class="bx bx-chevron-right text-2xl text-primary"></i>
+                  </div>
+                </div>
+                <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    
+                  <a href="https://github.com/satyy2301" class="pl-4">
+                    <i class="bx bxl-github text-2xl text-black hover:text-yellow"></i>
+                </a>
+                
+                 
+                  <a href="https://www.linkedin.com/in/satyam-gupta-883729234/" class="pl-4">
+                    <i class="bx bxl-linkedin text-2xl text-black hover:text-yellow"></i>
+                  </a>
+                  <a href="mailto:satyamg065@gmail.com" class="pl-4">
+                    <i class="bx bx-mail-send text-2xl text-black  hover:text-yellow"></i>
+                </a>
+                
+                  <a href="https://leetcode.com/u/satyamg065/" class="pl-4" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="24" height="24" fill="#000000">
+                        <path d="M20.1,16.007h-9.187c-1.047,0-1.899-0.897-1.899-2s0.853-2,1.899-2H20.1c1.048,0,1.9,0.897,1.9,2S21.147,16.007,20.1,16.007z M10.913,13.507c-0.217,0-0.399,0.229-0.399,0.5s0.183,0.5,0.399,0.5H20.1c0.217,0,0.4-0.229,0.4-0.5s-0.184-0.5-0.4-0.5H10.913z"></path>
+                        <path d="M10.538,24c-1.621,0-3.011-0.55-4.021-1.589l-3.949-4.09C1.557,17.278,1,15.803,1,14.167c0-1.61,0.557-3.072,1.568-4.117l9.174-9.47C12.104,0.206,12.592,0,13.113,0c0,0,0,0,0.001,0c0.54,0,1.049,0.218,1.434,0.614c0.766,0.792,0.78,2.061,0.032,2.828l-1.443,1.511C13.549,5.18,13.985,5.5,14.511,5.95l2.361,1.963c0.804,0.824,0.788,2.093,0.024,2.882c-0.386,0.397-0.895,0.615-1.435,0.615c-0.001,0-0.001,0-0.002,0c-0.521,0-1.007-0.207-1.367-0.581l-2.377-1.876c-0.668-0.497-0.783-0.534-1.19-0.534c-0.422,0-0.803,0.159-1.164,0.486l-3.886,4.069c-0.282,0.291-0.43,0.702-0.43,1.191c0,0.498,0.155,0.945,0.427,1.226l3.937,4.091c0.251,0.26,0.627,0.392,1.116,0.392c0.49,0,0.866-0.132,1.116-0.392l2.461-2.454c0.351-0.363,0.836-0.569,1.357-0.57c0,0,0.001,0,0.002,0c0.539,0,1.049,0.219,1.434,0.616c0.765,0.79,0.78,2.058,0.034,2.825l-2.365,2.469C13.542,23.422,12.113,24,10.538,24z M13.113,1.5c-0.079,0-0.194,0.021-0.294,0.124l-9.173,9.469C2.907,11.856,2.5,12.948,2.5,14.167c0,1.244,0.407,2.349,1.146,3.11c0.001,0.001,0.001,0.001,0.001,0.002l3.948,4.089c0.72,0.74,1.737,1.132,2.943,1.132c1.183,0,2.202-0.405,2.946-1.173l2.365-2.469c0.188-0.193,0.172-0.531-0.032-0.741c-0.1-0.103-0.226-0.159-0.356-0.159l0,0c-0.078,0-0.192,0.021-0.29,0.122l-2.46,2.454c-0.526,0.546-1.285,0.84-2.186,0.84c-0.898,0-1.658-0.294-2.195-0.85l-3.937-4.091c-0.546-0.565-0.848-1.371-0.848-2.268c0-0.874,0.302-1.667,0.849-2.231l3.921-4.104c0.67-0.609,1.421-0.912,2.21-0.912c0.878,0,1.315,0.258,2.104,0.845l2.468,1.957c0.172,0.168,0.285,0.189,0.364,0.189l0,0c0.131,0,0.258-0.057,0.357-0.159c0.202-0.21,0.219-0.549,0.034-0.739l-2.311-1.915c-1.026-0.881-1.474-1.02-1.844-1.086c-0.271-0.05-0.51-0.247-0.595-0.51c-0.086-0.263-0.036-0.554,0.155-0.753l2.241-2.347c0.189-0.195,0.173-0.533-0.03-0.743C13.372,1.557,13.245,1.5,13.113,1.5z"></path>
+                    </svg>
+                </a>
+                  
+                
+                </div>
+              </div>
+            </div>
+            <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0 flex flex-wrap justify-between">
+              <div class="w-full lg:w-auto lg:mr-6">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  HTML&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;C/C++&nbsp;&nbsp;&nbsp;&nbsp;MySQL&nbsp;&nbsp;&nbsp;&nbsp;XML&nbsp;&nbsp;&nbsp;&nbsp;JavaScript&nbsp;&nbsp;&nbsp;c#
+                </h4>
+              </div>
+              <div class="w-full lg:w-auto lg:mr-6 pt-6 lg:pt-0">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Python&nbsp;&nbsp;&nbsp;&nbsp;Angular&nbsp;&nbsp;&nbsp;&nbsp;mongo db&nbsp;&nbsp;&nbsp;&nbsp;unity 2d
+                </h4>
+              </div>
+              <div class="w-full lg:w-auto lg:mr-6 pt-6 lg:pt-0">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  NODEjs&nbsp;&nbsp;&nbsp;&nbsp;ReactJs&nbsp;&nbsp;&nbsp;&nbsp;Django&nbsp;&nbsp;&nbsp;&nbsp;Tailwind
+                  CSS
+                </h4>
+              </div>
+              <div class="w-full lg:w-auto lg:mr-6 pt-6 lg:pt-0">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  Express&nbsp;Js&nbsp;&nbsp;&nbsp;&nbsp;Next
+                  Js&nbsp;&nbsp;&nbsp;&nbsp;Typescript&nbsp;&nbsp;&nbsp;&nbsp;Wordpress
+                </h4>
+              </div>
+              <div class="w-full lg:w-auto lg:mr-6 pt-6 lg:pt-0">
+                <h4 class="font-body font-semibold uppercase text-black">
+                  FIGMA&nbsp;&nbsp;&nbsp;&nbsp;PREMIERe PRO&nbsp;&nbsp;&nbsp;&nbsp;Matlab&nbsp;&nbsp;&nbsp;&nbsp;MS
+                  OFFICE
+                </h4>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="container py-16 md:py-20" id="services">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Here's what I'm good at
+          </h2>
+          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            These are the services I offer
+          </h3>
+
+          <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3">
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="/assets/img/icon-development-white.svg" alt="development icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="/assets/img/icon-development-black.svg" alt="development icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  WEB DEVELOPMENT
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Specializing in building dynamic and interactive websites using a variety of technologies such as
+                  HTML, CSS, JavaScript, Angular, ReactJs, Django, and NextJs. Experienced in creating user-friendly
+                  interfaces and implementing client requirements to deliver high-quality web solutions.
+                </p>
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="/assets/img/icon-content-white.svg" alt="content marketing icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="/assets/img/icon-content-black.svg" alt="content marketing icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Machine Learning and Data Science
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Proficient in developing innovative machine learning models and data science solutions. Skilled in
+                  utilizing Python and libraries such as NumPy, Pandas, and Scikit-learn for data manipulation,
+                  analysis, and modeling. Experienced in applying advanced algorithms like Isomap, Locally Linear
+                  Embedding (LLE), and Decision Trees for pattern recognition, dimensionality reduction, and predictive
+                  analytics.
+                </p>
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="/assets/img/icon-mobile-white.svg" alt="Mobile Application icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="/assets/img/icon-mobile-black.svg" alt="Mobile Application icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Mobile App Development
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Proficient in designing and optimizing mobile applications for Android platforms using Unity and C#.
+                  Experienced in creating engaging and responsive user interfaces, incorporating smooth controls,
+                  dynamic content generation, and performance optimizations for optimal user experience.
+                </p>
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="/assets/img/icon-design-white.svg" alt="Theme Design icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="/assets/img/icon-design-black.svg" alt="Theme Design icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Designing
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Proficient in web design and graphic design, adept at creating visually stunning and user-centric
+                  interfaces using tools like Figma, Canva, Adobe Premiere Pro, and Photoshop. Skilled in translating
+                  client requirements into captivating designs, ensuring seamless user experiences across various
+                  digital platforms. Experienced in leveraging design principles, creativity, and attention to detail to
+                  deliver compelling visual solutions that engage and delight audiences.
+                </p>
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block"> <img src="/assets/img/icon-email-white.svg"
+                    alt="Email Marketing icon" /> </div>
+                <div class="block group-hover:hidden"> <img src="/assets/img/icon-email-black.svg"
+                    alt="Email Marketing icon" /> </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Technical Project Management:
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Demonstrated ability to lead and manage technical projects effectively from conception to delivery.
+                  Experienced in coordinating with cross-functional teams, setting project goals, allocating resources,
+                  and ensuring timely project completion. Skilled in agile methodologies, risk management, and
+                  stakeholder communication to drive project success and achieve business objectives.
+                </p>
+              </div>
+            </div>
+            <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+              <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+                <div class="hidden group-hover:block">
+                  <img src="/assets/img/icon-graphics-white.svg" alt="Graphic Design icon" />
+                </div>
+                <div class="block group-hover:hidden">
+                  <img src="/assets/img/icon-graphics-black.svg" alt="Graphic Design icon" />
+                </div>
+              </div>
+              <div class="text-center">
+                <h3 class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl">
+                  Script Writing and Film Making
+                </h3>
+                <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+                  Proficient in scriptwriting and directing across genres, from drama to sci-fi, with a knack for
+                  crafting compelling narratives and engaging characters. Skilled in overseeing the entire production
+                  process, from ideation to execution, and adept at creating visually impactful scenes. Additionally, a
+                  published poet with over 20 poems exploring themes of love, nature, and the human experience.
+                  Passionate about creating memorable and thought-provoking content across multiple creative mediums.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container py-16 md:py-20" id="portfolio">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Check out my Portfolio
+          </h2>
+          <h3 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            My Projects :
+          </h3>
+
+          <div class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2">
+            <a href="https://github.com/satyy2301/Localization-in-Internet-of-Things" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              Localisation in internet of things :
+              <img src="/assets/img/portfolio-apple.jpeg" class="w-full shadow" alt="portfolio image" />
+            </a>
+            <a href="" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              Image Stagnography:
+              <img src="/assets/img/portfolio-stripe.jpeg" class="w-full shadow" alt="portfolio image" />
+            </a>
+            <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              <img src="/assets/img/portfolio-fedex.jpeg" class="w-full shadow" alt="portfolio image" />
+            </a>
+            <a href="/" class="mx-auto transform transition-all hover:scale-105 md:mx-0">
+              <img src="/assets/img/portfolio-microsoft.jpeg" class="w-full shadow" alt="portfolio image" />
+            </a>
+          </div>
+        </div>
+
+
+      <div class="bg-grey-50 flex justify-center items-center min-h-screen" id="blog">
+  <div class="container py-16 md:py-20">
+    <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+      I also like to write
+    </h2>
+    <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+      Check out my Script Writing Website
+    </h4>
+    <div class="mx-auto flex justify-center items-center min-h-100%">
+      <a href="https://sgscreenwriting.weebly.com/" class="shadow" target="_blank">
+
+        <div style="background-image: url(/assets/img/post-01.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">Scripts</span>
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black">Industry level scripts explolring different genres </span>
+          <span class="block pt-2 font-body text-grey-20">Welcome to our script writing website, your ultimate destination for aspiring and experienced writers alike. Whether you're crafting your first screenplay or refining your storytelling skills, our platform offers a comprehensive suite of tools, resources, and community support to help you bring your ideas to life. From brainstorming sessions to formatting guidance, collaborative feedback to industry insights, we provide everything you need to unleash your creativity and thrive in the world of scriptwriting. Join our vibrant community today and embark on your journey to cinematic excellence.</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+        
+
+        <div class="container py-16 md:py-20" id="contact">
+          <h2 class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+            Here's a contact form
+          </h2>
+          <h4 class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+            Have Any Questions?
+          </h4>
+          <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+            <p class="font-body text-grey-10">
+              Do you have any questions about our services or products? We're here to help! Whether you need assistance
+              with your order, want more information about our offerings, or have any other inquiries, feel free to
+              reach out to us. Our team is dedicated to providing you with the support and assistance you need. Don't
+              hesitate to contact us—we're always ready to assist you!
+            </p>
+          </div>
+          <form class="mx-auto w-full pt-10 sm:w-3/4 flex flex-col justify-between" style="min-height: 400px;">
+            <div class="flex flex-col md:flex-row">
+              <input class="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5"
+                placeholder="Name" type="text" id="name" />
+              <input
+                class="mt-6 md:mt-0 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:ml-3 md:w-1/2 lg:ml-5"
+                placeholder="Email" type="text" id="email" />
+            </div>
+            <textarea class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8"
+              placeholder="Message" id="message" cols="30" rows="10"></textarea>
+            <button
+              class="mt-6 flex items-center justify-center rounded bg-primary px-6 py-2 font-header text-base font-bold uppercase text-white hover:bg-grey-20 self-center">
+              Send
+              <i class="bx bx-chevron-right relative -right-2 text-2xl"></i>
+            </button>
+          </form>
+
+
+          <div class="flex flex-col items-center pt-16">
+            <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg lg:w-1/6">
+              Contact
+            </p>
+            <div class="w-full lg:w-2/3 flex flex-col lg:flex-row justify-center">
+              <div
+                class="w-full lg:w-1/3 border-l-2 border-t-0 border-r-0 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:border-l-0 lg:border-t-2">
+                <div class="flex items-center">
+                  <i class="bx bx-envelope text-2xl text-grey-40"></i>
+                  <a href="mailto:satyamg065@gmail.com"
+                    class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">Email</a>
+                </div>
+
+                <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
+                  satyamg065@gmail.com
+                </p>
+              </div>
+              <div
+                class="w-full lg:w-1/3 border-l-0 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:border-l-2 lg:border-t-2">
+                <div class="flex items-center">
+                  <i class="bx bx-map text-2xl text-grey-40"></i>
+                  <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+                    Address
+                  </p>
+                </div>
+                <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
+                  NOIDA, UTTAR PRADESH
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+        <div class="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96"
+          style="background-image: url(/assets/img/map.png)"></div>
+
+        <div class="relative bg-primary bg-cover bg-center bg-no-repeat py-16 bg-blend-multiply lg:py-24"
+          style="background-image: url(/assets/img/bg-cta.jpg)">
+          <div class="container relative z-30">
+            <h3
+              class="text-center font-header text-3xl uppercase leading-tight tracking-wide text-white sm:text-4xl lg:text-5xl">
+              Keep <span class="font-bold">up-to-date</span> <br />
+              with what I'm up to
+            </h3>
+            <form class="mt-6 flex flex-col justify-center sm:flex-row">
+              <input class="w-full rounded px-4 py-3 font-body text-black sm:w-2/5 sm:py-4 lg:w-1/3" type="text"
+                id="email" placeholder="Give me your Email" />
+              <button
+                class="mt-2 rounded bg-yellow px-8 py-3 font-body text-base font-bold uppercase text-primary transition-colors hover:bg-primary hover:text-white focus:border-transparent focus:outline-none focus:ring focus:ring-yellow sm:ml-2 sm:mt-0 sm:py-4 md:text-lg">
+                Join the club
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary">
+        <div class="container flex flex-col justify-between py-6 sm:flex-row">
+          <p class="text-center font-body text-white md:text-left">
+            © Copyright 2022. All right reserved, Satyam.
+          </p>
+          <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+                    
+            <a href="https://github.com/satyy2301" class="pl-4">
+              <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+          </a>
+          
+           
+            <a href="https://www.linkedin.com/in/satyam-gupta-883729234/" class="pl-4">
+              <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+            </a>
+            <a href="mailto:satyamg065@gmail.com" class="pl-4">
+              <i class="bx bx-mail-send text-2xl text-white hover:text-yellow"></i>
+          </a>
+          
+            <a href="https://leetcode.com/u/satyamg065/" class="pl-4" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="24" height="24" fill="#FFFFFF">
+                  <path d="M20.1,16.007h-9.187c-1.047,0-1.899-0.897-1.899-2s0.853-2,1.899-2H20.1c1.048,0,1.9,0.897,1.9,2S21.147,16.007,20.1,16.007z M10.913,13.507c-0.217,0-0.399,0.229-0.399,0.5s0.183,0.5,0.399,0.5H20.1c0.217,0,0.4-0.229,0.4-0.5s-0.184-0.5-0.4-0.5H10.913z"></path>
+                  <path d="M10.538,24c-1.621,0-3.011-0.55-4.021-1.589l-3.949-4.09C1.557,17.278,1,15.803,1,14.167c0-1.61,0.557-3.072,1.568-4.117l9.174-9.47C12.104,0.206,12.592,0,13.113,0c0,0,0,0,0.001,0c0.54,0,1.049,0.218,1.434,0.614c0.766,0.792,0.78,2.061,0.032,2.828l-1.443,1.511C13.549,5.18,13.985,5.5,14.511,5.95l2.361,1.963c0.804,0.824,0.788,2.093,0.024,2.882c-0.386,0.397-0.895,0.615-1.435,0.615c-0.001,0-0.001,0-0.002,0c-0.521,0-1.007-0.207-1.367-0.581l-2.377-1.876c-0.668-0.497-0.783-0.534-1.19-0.534c-0.422,0-0.803,0.159-1.164,0.486l-3.886,4.069c-0.282,0.291-0.43,0.702-0.43,1.191c0,0.498,0.155,0.945,0.427,1.226l3.937,4.091c0.251,0.26,0.627,0.392,1.116,0.392c0.49,0,0.866-0.132,1.116-0.392l2.461-2.454c0.351-0.363,0.836-0.569,1.357-0.57c0,0,0.001,0,0.002,0c0.539,0,1.049,0.219,1.434,0.616c0.765,0.79,0.78,2.058,0.034,2.825l-2.365,2.469C13.542,23.422,12.113,24,10.538,24z M13.113,1.5c-0.079,0-0.194,0.021-0.294,0.124l-9.173,9.469C2.907,11.856,2.5,12.948,2.5,14.167c0,1.244,0.407,2.349,1.146,3.11c0.001,0.001,0.001,0.001,0.001,0.002l3.948,4.089c0.72,0.74,1.737,1.132,2.943,1.132c1.183,0,2.202-0.405,2.946-1.173l2.365-2.469c0.188-0.193,0.172-0.531-0.032-0.741c-0.1-0.103-0.226-0.159-0.356-0.159l0,0c-0.078,0-0.192,0.021-0.29,0.122l-2.46,2.454c-0.526,0.546-1.285,0.84-2.186,0.84c-0.898,0-1.658-0.294-2.195-0.85l-3.937-4.091c-0.546-0.565-0.848-1.371-0.848-2.268c0-0.874,0.302-1.667,0.849-2.231l3.921-4.104c0.67-0.609,1.421-0.912,2.21-0.912c0.878,0,1.315,0.258,2.104,0.845l2.468,1.957c0.172,0.168,0.285,0.189,0.364,0.189l0,0c0.131,0,0.258-0.057,0.357-0.159c0.202-0.21,0.219-0.549,0.034-0.739l-2.311-1.915c-1.026-0.881-1.474-1.02-1.844-1.086c-0.271-0.05-0.51-0.247-0.595-0.51c-0.086-0.263-0.036-0.554,0.155-0.753l2.241-2.347c0.189-0.195,0.173-0.533-0.03-0.743C13.372,1.557,13.245,1.5,13.113,1.5z"></path>
+              </svg>
+          </a>
+            
+          
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
